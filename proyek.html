@@ -64,7 +64,7 @@
   .proj.wide{grid-column:span 12;}
   .proj-top{display:flex; justify-content:space-between; align-items:flex-start;}
   .proj-thumb{
-    height:150px; border-radius:10px; margin-bottom:4px;
+    aspect-ratio: 16/9; border-radius:10px; margin-bottom:4px;
     background:
       repeating-linear-gradient(135deg, #23262f 0 2px, #1c1e24 2px 14px);
     border:1px solid var(--border);
@@ -131,41 +131,12 @@
 
   <div class="grid">
 
-    <div class="proj wide">
-      <div class="proj-top">
-        <div class="eyebrow mono" style="margin-bottom:0;">featured</div>
-        <span class="status live">● live</span>
-      </div>
-      <img class="proj-thumb" src="image copy.png" alt="Nama Proyek">
-      <h3>Portal Pelayanan Publik</h3>
-      <p class="desc">Memotong rantai birokrasi konvensional. Urus berkas administrasi persuratan Anda secara mandiri melalui sistem online tanpa perlu datang bolak-balik hanya untuk menanyakan persyaratan..</p>
-      <div class="stack-row">
-        <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Tailwind</span>
-      </div>
-      <div class="proj-links">
-        <a href="https://primawatangsoreang.com/" target="_blank" rel="noopener">Live Demo ↗</a>
-        <a href="https://github.com/Zevhirus/PELAYAN-PUBLIK" target="_blank" rel="noopener">Source Code ↗</a>
-      </div>
-    </div>
-
-    <div class="proj">
-      <div class="proj-top">
-        <span class="eyebrow mono" style="margin-bottom:0;">web app</span>
-        <span class="status dev">● in dev</span>
-      </div>
-      <div class="proj-thumb">preview-02.png</div>
-      <h3>WEB DESA</h3>
-      <p class="desc">Ringkasan singkat proyek dan teknologi yang dipakai.</p>
-      <div class="stack-row"><span>Next.js</span><span>Prisma</span></div>
-      <div class="proj-links"><a href="https://desalompotengah.site/" target="_blank" rel="noopener">Source Code ↗</a></div>
-    </div>
-
     <div class="proj">
       <div class="proj-top">
         <span class="eyebrow mono" style="margin-bottom:0;">web app</span>
         <span class="status done">● selesai</span>
       </div>
-      <div class="proj-thumb">preview-03.png</div>
+      <img class="proj-thumb" src="cafe.jpeg" alt="Nama Proyek">
       <h3>Cafe postropis</h3>
       <p class="desc">Ringkasan singkat proyek dan teknologi yang dipakai.</p>
       <div class="stack-row"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Tailwind</span></div>
@@ -174,28 +145,39 @@
 
     <div class="proj">
       <div class="proj-top">
-        <span class="eyebrow mono" style="margin-bottom:0;">open source</span>
-        <span class="status live">● active</span>
+        <span class="eyebrow mono" style="margin-bottom:0;">web app</span>
+        <span class="status done">● selesai</span>
       </div>
-      <div class="proj-thumb">preview-04.png</div>
-      <h3>Nama Proyek Empat</h3>
-      <p class="desc">Kontribusi ke proyek open source — jelaskan fitur atau fix apa yang kamu tambahkan.</p>
-      <div class="stack-row"><span>Python</span><span>FastAPI</span></div>
-      <div class="proj-links"><a href="https://github.com/username/nama-repo-4" target="_blank" rel="noopener">GitHub ↗</a></div>
+      <img class="proj-thumb" src="desa.jpeg" alt="Nama Proyek">
+      <h3>WEB DESA</h3>
+      <p class="desc">Ringkasan singkat proyek dan teknologi yang dipakai.</p>
+      <div class="stack-row"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Tailwind</span></div>
+      <div class="proj-links"><a href="https://desalompotengah.site/" target="_blank" rel="noopener">Live Demo  ↗</a></div>
     </div>
 
     <div class="proj">
       <div class="proj-top">
-        <span class="eyebrow mono" style="margin-bottom:0;">freelance</span>
+        <span class="eyebrow mono" style="margin-bottom:0;">web app</span>
         <span class="status done">● selesai</span>
       </div>
-      <div class="proj-thumb">preview-05.png</div>
-      <h3>Nama Proyek Lima</h3>
-      <p class="desc">Proyek untuk klien — website company profile, toko online, dsb.</p>
-      <div class="stack-row"><span>WordPress</span><span>PHP</span></div>
-      <div class="proj-links"><a href="https://link-live-demo-proyek-5.com" target="_blank" rel="noopener">Live Demo ↗</a></div>
+      <img class="proj-thumb" src="image.png" alt="Nama Proyek">
+      <h3>Portal Pelayanan Publik</h3>
+      <p class="desc">Memotong rantai birokrasi konvensional. Urus berkas administrasi persuratan Anda secara mandiri melalui sistem online tanpa perlu datang bolak-balik hanya untuk menanyakan persyaratan.</p>
+      <div class="stack-row"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Tailwind</span></div>
+      <div class="proj-links"><a href="https://primawatangsoreang.com/" target="_blank" rel="noopener">Live Demo ↗</a></div>
     </div>
 
+    <div class="proj">
+      <div class="proj-top">
+        <span class="eyebrow mono" style="margin-bottom:0;">open source</span>
+        <span class="status done">● selesai</span>
+      </div>
+      <img class="proj-thumb" src="ARSIP.jpeg" alt="Nama Proyek">
+      <h3>ARSIP DESA</h3>
+      <p class="desc">Kontribusi ke proyek open source — jelaskan fitur atau fix apa yang kamu tambahkan.</p>
+      <div class="stack-row"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Tailwind</span></div>
+      <div class="proj-links"><a href="https://zevhirus.github.io/ARSIPAN-DESA/" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
   </div>
 </div>
 </body>
