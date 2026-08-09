@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyek — Developer & Fotografer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14151a; --bg-panel:#1c1e24; --bg-panel-2:#20222a;
+    --text:#f2f0e8; --muted:#8b8d98;
+    --amber:#c9a227; --amber-soft:#c9a22722;
+    --cyan:#5eead4; --cyan-soft:#5eead422;
+    --border:#33353d; --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:
+      radial-gradient(1100px 500px at 15% -10%, #22242c 0%, transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, #1a1d22 0%, transparent 55%),
+      var(--bg);
+    color:var(--text); font-family:'IBM Plex Sans', sans-serif;
+    padding:36px 20px 60px;
+  }
+  .page{max-width:1080px; margin:0 auto;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .display{font-family:'Space Grotesk', sans-serif;}
+
+  .topbar{
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12px; letter-spacing:.04em; color:var(--muted); padding-bottom:18px;
+  }
+  .topbar .role{display:flex; align-items:center; gap:8px; color:var(--text);}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan); box-shadow:0 0 8px var(--cyan);}
+
+  .nav{display:flex; align-items:center; gap:6px; padding-bottom:22px; border-bottom:1px solid var(--border); margin-bottom:30px;}
+  .nav a{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--muted); text-decoration:none; padding:8px 14px; border-radius:8px; border:1px solid transparent; transition:.15s;}
+  .nav a:hover{color:var(--text); border-color:var(--border);}
+  .nav a.active{color:var(--cyan); background:var(--cyan-soft); border-color:#5eead444;}
+  .nav .sep{flex:1;}
+  .nav .brand{font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:14px; color:var(--text); margin-right:8px;}
+  @media (max-width:520px){.nav{flex-wrap:wrap;} .nav .sep{display:none;}}
+
+  .header{margin-bottom:30px;}
+  .eyebrow{font-size:11px; color:var(--amber); letter-spacing:.06em; margin-bottom:10px;}
+  .header h1{font-size:32px; margin-bottom:8px;}
+  .header p{color:var(--muted); font-size:13.5px; max-width:520px; line-height:1.6;}
+
+  .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px;}
+  .filters .f{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    padding:7px 13px; border-radius:20px; border:1px solid var(--border);
+    color:var(--muted); background:var(--bg-panel-2);
+  }
+  .filters .f.on{color:var(--cyan); border-color:#5eead444; background:var(--cyan-soft);}
+
+  .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px;}
+  .proj{
+    grid-column:span 6;
+    background:var(--bg-panel); border:1px solid var(--border); border-radius:var(--radius);
+    padding:20px; display:flex; flex-direction:column; gap:12px;
+  }
+  .proj.wide{grid-column:span 12;}
+  .proj-top{display:flex; justify-content:space-between; align-items:flex-start;}
+  .proj-thumb{
+    height:150px; border-radius:10px; margin-bottom:4px;
+    background:
+      repeating-linear-gradient(135deg, #23262f 0 2px, #1c1e24 2px 14px);
+    border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--muted);
+    width:100%; object-fit:cover; object-position:center;
+  }
+  .status{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; padding:4px 9px; border-radius:6px;
+  }
+  .status.live{color:var(--cyan); background:var(--cyan-soft); border:1px solid #5eead444;}
+  .status.dev{color:var(--amber); background:var(--amber-soft); border:1px solid #c9a22744;}
+  .status.done{color:var(--text); background:var(--bg-panel-2); border:1px solid var(--border);}
+  .proj h3{font-size:17px; margin-bottom:4px;}
+  .proj .desc{font-size:12.5px; color:var(--muted); line-height:1.6;}
+  .stack-row{display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;}
+  .stack-row span{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text);
+    background:var(--bg-panel-2); border:1px solid var(--border);
+    padding:3px 8px; border-radius:6px;
+  }
+  .proj-links{display:flex; gap:10px; margin-top:6px;}
+  .proj-links a{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text);
+    text-decoration:none; border-bottom:1px solid var(--border); padding-bottom:2px;
+  }
+  .proj-links a:hover{color:var(--cyan); border-color:var(--cyan);}
+
+  @media (max-width:720px){
+    .proj{grid-column:span 12;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <span class="mono">// est. 2003 &nbsp;·&nbsp; portfolio v1</span>
+    <span class="role"><span class="dot"></span> Developer &nbsp;/&nbsp; Fotografer</span>
+  </div>
+
+  <nav class="nav">
+    <span class="brand">✳ Portfolio</span>
+    <a href="portfolio-developer-fotografer.html">Beranda</a>
+    <a href="proyek.html" class="active">Proyek</a>
+    <a href="foto.html">Hasil Foto</a>
+    <span class="sep"></span>
+    <a href="mailto:nama@email.com">Kontak ↗</a>
+  </nav>
+
+  <div class="header">
+    <div class="eyebrow mono">$ ls proyek/ --sort=recent</div>
+    <h1 class="display">Proyek yang Pernah Dibangun</h1>
+    <p>Kumpulan proyek pribadi, freelance, dan kolaborasi — mulai dari aplikasi web, tools internal, hingga eksperimen open source.</p>
+  </div>
+
+  <div class="filters">
+    <span class="f on">Semua</span>
+    <span class="f">Web App</span>
+    <span class="f">Mobile</span>
+    <span class="f">Open Source</span>
+    <span class="f">Freelance</span>
+  </div>
+
+  <div class="grid">
+
+    <div class="proj wide">
+      <div class="proj-top">
+        <div class="eyebrow mono" style="margin-bottom:0;">featured</div>
+        <span class="status live">● live</span>
+      </div>
+      <div class="proj-thumb">preview-01.png</div>
+      <h3>Nama Proyek Unggulan</h3>
+      <p class="desc">Deskripsi singkat tentang proyek ini — masalah apa yang diselesaikan, siapa penggunanya, dan peran kamu di dalamnya.</p>
+      <div class="stack-row">
+        <span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Tailwind</span>
+      </div>
+      <div class="proj-links">
+        <a href="https://link-live-demo-proyek-1.com" target="_blank" rel="noopener">Live Demo ↗</a>
+        <a href="https://github.com/username/nama-repo-1" target="_blank" rel="noopener">Source Code ↗</a>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-top">
+        <span class="eyebrow mono" style="margin-bottom:0;">web app</span>
+        <span class="status dev">● in dev</span>
+      </div>
+      <div class="proj-thumb">preview-02.png</div>
+      <h3>Nama Proyek Dua</h3>
+      <p class="desc">Ringkasan singkat proyek dan teknologi yang dipakai.</p>
+      <div class="stack-row"><span>Next.js</span><span>Prisma</span></div>
+      <div class="proj-links"><a href="https://github.com/username/nama-repo-2" target="_blank" rel="noopener">Source Code ↗</a></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-top">
+        <span class="eyebrow mono" style="margin-bottom:0;">mobile</span>
+        <span class="status done">● selesai</span>
+      </div>
+      <div class="proj-thumb">preview-03.png</div>
+      <h3>Nama Proyek Tiga</h3>
+      <p class="desc">Ringkasan singkat proyek dan teknologi yang dipakai.</p>
+      <div class="stack-row"><span>Flutter</span><span>Firebase</span></div>
+      <div class="proj-links"><a href="https://link-live-demo-proyek-3.com" target="_blank" rel="noopener">Live Demo ↗</a></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-top">
+        <span class="eyebrow mono" style="margin-bottom:0;">open source</span>
+        <span class="status live">● active</span>
+      </div>
+      <div class="proj-thumb">preview-04.png</div>
+      <h3>Nama Proyek Empat</h3>
+      <p class="desc">Kontribusi ke proyek open source — jelaskan fitur atau fix apa yang kamu tambahkan.</p>
+      <div class="stack-row"><span>Python</span><span>FastAPI</span></div>
+      <div class="proj-links"><a href="https://github.com/username/nama-repo-4" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-top">
+        <span class="eyebrow mono" style="margin-bottom:0;">freelance</span>
+        <span class="status done">● selesai</span>
+      </div>
+      <div class="proj-thumb">preview-05.png</div>
+      <h3>Nama Proyek Lima</h3>
+      <p class="desc">Proyek untuk klien — website company profile, toko online, dsb.</p>
+      <div class="stack-row"><span>WordPress</span><span>PHP</span></div>
+      <div class="proj-links"><a href="https://link-live-demo-proyek-5.com" target="_blank" rel="noopener">Live Demo ↗</a></div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
